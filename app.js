@@ -5,7 +5,7 @@ const lastSearch = document.getElementById('last-searchs');
 
 // load movies from API
 async function loadMovies(searchTerm){
-    const URL = `https://omdbapi.com/?s=${searchTerm}&page=1&apikey=b5856cb5`;
+    const URL = `http://omdbapi.com/?s=${searchTerm}&page=1&apikey=b5856cb5`;
     const res = await fetch(`${URL}`);
     const data = await res.json();
     // console.log(data.Search);
