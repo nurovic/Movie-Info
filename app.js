@@ -5,7 +5,7 @@ const lastSearch = document.getElementById('last-searchs');
 
 // load movies from API
 async function loadMovies(searchTerm){
-    const URL = `http://omdbapi.com/?s=${searchTerm}&page=1&apikey=b5856cb5`;
+    const URL = `https://omdbapi.com/?s=${searchTerm}&page=1&apikey=b5856cb5`;
     const res = await fetch(`${URL}`);
     const data = await res.json();
     // console.log(data.Search);
@@ -51,7 +51,7 @@ function loadMovieDetails(){
         movie.addEventListener('click', async () => {
             searchList.classList.add('hide-search-list');
             movieSearchBox.value = "";
-            const result = await fetch(`http://www.omdbapi.com/?i=${movie.dataset.id}&apikey=b5856cb5`);
+            const result = await fetch(`https://www.omdbapi.com/?i=${movie.dataset.id}&apikey=b5856cb5`);
             const movieDetails = await result.json();
             displayMovieDetails(movieDetails);
             saveLastSearch(movieDetails)
